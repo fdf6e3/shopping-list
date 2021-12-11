@@ -1,8 +1,8 @@
 # 🛒 Shopping List
 
-This is one of my toy projects made with Vanilla JavaScript without any framework. It includes very basic yet important front-end features.
+This is one of my toy projects made with **Vanilla JavaScript** without any framework. It includes very basic yet important front-end features.
 
-## Project description
+## 🔍 Project description
 
 Users are able to
 
