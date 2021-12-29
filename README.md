@@ -17,9 +17,10 @@ Since the `keypress` event has been deprecated,
 
 - it should be changed to `keydown`(or `keyup`) event.
 
-- Depending on user's OS IME(e.g. macOS), several items are simultaneously generated in when entering a word in a language(e.g. Korean) that is formed one character with two or more alphabets.
+- However, depending on user's OS IME(e.g. macOS), several items are generated at the same time
+- when a word is input in the language(e.g. Korean) in which a single letter is formed by combining two or more alphabets.
 - It is because the keydown event is triggered while the alphabets are combined
-- to solve this error, the if-statement with `isComposing` below should be added.
+- to solve this error, the if-statement with `event.isComposing` below should be added.
 
 ```cs
 const input = document.querySelector('.footer__input');
@@ -36,7 +37,9 @@ input.addEventListener('keydown', (event) => {
 
 or
 
-- it can be simple to use `HTML form tags` with `submit` event.
+- it can be simple to use `HTML form tags` with `submit` event. (See more info about [Form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form))
+- However, it should be called with `event.preventDefault();` to show the items
+- because the page is loaded automatically by the browser after submit event.
 
 ```cs
 const form = document.querySelector('.new-form');
